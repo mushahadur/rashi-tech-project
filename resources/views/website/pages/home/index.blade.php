@@ -5,9 +5,9 @@
 		<section id="home" class="welcome-hero">
 			<div class="container">
 				<div class="welcome-hero-txt">
-					<h2>best place to find and explore <br> that all you need </h2>
+					<h2>this is Important Blog site  <br> for all user  </h2>
 					<p>
-						Find Best Place, Restaurant, Hotel, Real State and many more think in just One click 
+						I am Mushahedur Rahaman khan. I am a full-stack web Developer. 
 					</p>
 				</div>
 			</div>
@@ -23,52 +23,26 @@
 			<div class="container">
 				<div class="section-header">
 					<h2>All Blog Post</h2>
-					<p>Always upto date with our latest News and Articles </p>
+					<p>Always upto date with our latest Blog </p>
 				</div><!--/.section-header-->
 				<div class="blog-content">
 					<div class="row">
+						@foreach ($posts as $item)
 						<div class="col-md-4 col-sm-6">
 							<div class="single-blog-item">
 								<div class="single-blog-item-img">
-									<img src="{{ asset('/') }}frontend/assets/images/blog/b1.jpg" alt="blog image">
+									<img src="{{asset('/storage/Post-image/'.$item->image)}}" alt="blog image">
 								</div>
 								<div class="single-blog-item-txt">
-									<h2><a href="#">How to find your Desired Place more quickly</a></h2>
-									<h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
-									</p>
+									<h2><a href="#">{{ $item->title }}</a></h2>
+									<h4>posted <span>by</span> <a href="#">User</a>  {{ $item->created_at->format('F Y')}}</h4>
+									<p> {{ $item->description }}</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-blog-item">
-								<div class="single-blog-item-img">
-									<img src="{{ asset('/') }}frontend/assets/images/blog/b2.jpg" alt="blog image">
-								</div>
-								<div class="single-blog-item-txt">
-									<h2><a href="#">How to find your Desired Place more quickly</a></h2>
-									<h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-blog-item">
-								<div class="single-blog-item-img">
-									<img src="{{ asset('/') }}frontend/assets/images/blog/b3.jpg" alt="blog image">
-								</div>
-								<div class="single-blog-item-txt">
-									<h2><a href="#">How to find your Desired Place more quickly</a></h2>
-									<h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
-									</p>
-								</div>
-							</div>
-						</div>
+						@endforeach
+						
+						
 					</div>
 				</div>
 			</div><!--/.container-->

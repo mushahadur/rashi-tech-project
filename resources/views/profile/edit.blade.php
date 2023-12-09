@@ -1,5 +1,6 @@
 
-@extends('admin.master')
+@extends('admin.layout.master')
+
 @section('body')
 
 <section class="py-3">
@@ -10,20 +11,21 @@
                 @endif
 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card">
-                <img src="{{asset('/')}}uploads/{{Auth::user()->image}}" class="card-img-top" alt="{{Auth::user()->name}}" style="height: 360px; width:370px;"><br>
+                <img src="{{asset('/storage/User-image/'.Auth::user()->image)}}" class="card-img-top" alt="{{Auth::user()->name}}" style="height: 330px; width:100%;"><br>
                <h3 class="text-center py-3">{{Auth::user()->name}}</h3>
 
             </div>
         </div>
 
         {{-- This is Update Info --}}
-        <div class="col-md-4 ">
+        <div class="col-md-8 ">
 
-                <form action="{{route('profile.update')}}" method="POST" class="mx-3" enctype="multipart/form-data">
+                <form action="{{ route('profile.update', Auth::user()->id) }}" method="POST" class="mx-3" enctype="multipart/form-data">
                     @csrf
-                    @method('patch')
+                    @method('PUT')
+                    
                     <div class="form-group row mb-4">
                         <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Update Name</label>
                         <div class="col-sm-9">
@@ -63,7 +65,7 @@
                     <div class="form-group row mb-4">
                         <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Update Email</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" value="{{Auth::user()->email}}" id="horizontal-firstname-input" name="email" disabled/>
+                            <input type="text" class="form-control" value="{{Auth::user()->email}}" id="horizontal-firstname-input" name="email"/>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -78,7 +80,7 @@
                     <div class="form-group row justify-content-end">
                         <div class="col-sm-9">
                             <div>
-                                <button type="submit" class="btn btn-primary w-md">Save</button>
+                                <button type="submit" class="btn btn-primary w-md">Update Profile</button>
                             </div>
                         </div>
                     </div>
@@ -88,48 +90,7 @@
         </div>
 
         {{-- This is Update Password --}}
-        <div class="col-md-4 px-2">
-                <form method="post" action="{{ route('password.update') }}" class="pl-3">
-                    @csrf
-                    @method('put')
-
-                    <div class="form-group row mb-4">
-                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Current Password</label>
-                        <div class="col-sm-9">
-                            <input id="current_password" name="current_password" type="password" class="form-control" />
-                            @error('current_password')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">New Password</label>
-                        <div class="col-sm-9">
-                            <input id="password" name="password" type="password" class="mt-1 block w-full form-control" autocomplete="new-password" />
-                            @error('password')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Confirmation Password</label>
-                        <div class="col-sm-9">
-                            <input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full form-control" autocomplete="new-password"/>
-                            @error('password_confirmation')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group row justify-content-end">
-                        <div class="col-sm-9">
-                            <div>
-                                <button type="submit" class="btn btn-primary w-md">Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-        </div>
+        
     </div>
 
 

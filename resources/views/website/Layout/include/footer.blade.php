@@ -15,8 +15,7 @@
                     </div><!--/.navbar-header-->
                 </div>
                 <div class="col-sm-9">
-                    <p>This is my blog site This is my blog site This is my blog site This is my blog site This is my
-                        blog site This is my blog site </p>
+                    <p>I am looking for an opportunity to apply my knowledge, My creativity will be developed and take tasks to a better level with potential.I better feel when I love coding. </p>
                 </div>
             </div>
         </div>

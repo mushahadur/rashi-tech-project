@@ -41,7 +41,7 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{asset('/')}}uploads/{{Auth::user()->image}}"
+                    <img class="rounded-circle header-profile-user" src="{{asset('/storage/User-image/'.Auth::user()->image)}}"
                          alt="{{Auth::user()->name}}- Image">
                     <span class="d-none d-xl-inline-block ml-1">{{Auth::user()->name}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
