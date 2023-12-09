@@ -21,12 +21,12 @@
                             <span> Post</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="#">Add Post</a></li>
-                            <li><a href="#">Manage Post</a></li>
+                            <li><a href="{{ route('post.create') }}">Add Post</a></li>
+                            <li><a href="{{ route('post.index') }}">Manage Post</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript: void(0);" class="waves-effect">
+                        <a href="{{ route('profile.index') }}" class="waves-effect">
                             <i class="bx bx-user"></i>
                             <span> Profile </span>
                         </a>
