@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\User;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\Backend\User\UserRequest;
 
 class UserController extends Controller
 {
@@ -26,7 +28,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UserRequest $request, string $id)
     {  
         $user  =  User::find($id);
         
@@ -39,13 +41,12 @@ class UserController extends Controller
         }
 
         $user->name        = $request->name;
-        $user->email        = $request->email;
         $user->city        = $request->city;
         $user->country        = $request->country;
         $user->phone        = $request->phone;
         $user->update();
 
-        return redirect(route('profile.index'));
+        return redirect(route('profile.index'))->with('message', 'Your Profile Update successfully.');
     }
 
 }

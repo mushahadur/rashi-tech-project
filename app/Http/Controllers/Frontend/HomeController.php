@@ -11,5 +11,6 @@ class HomeController extends Controller
     public function index(){
         $posts = Post::orderBy('id', 'DESC')->take(3)->get();
         return view('website.pages.home.index', compact('posts'));
+        
     }
 }
