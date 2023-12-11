@@ -21,9 +21,9 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd('some');
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:user,email'],
             'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg'],
             'city' => ['required', 'string', 'max:255'],
             'country' => ['required', 'string', 'max:255'],

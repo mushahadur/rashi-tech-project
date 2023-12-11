@@ -28,7 +28,7 @@
                             <div class="media">
                                 <div class="media-body">
                                     <p class="text-muted font-weight-medium">Total Post</p>
-                                    <h4 class="mb-0">1,235</h4>
+                                    <h4 class="mb-0">{{ $totalPost }}</h4>
                                 </div>
 
                                 <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
@@ -46,12 +46,12 @@
                             <div class="media">
                                 <div class="media-body">
                                     <p class="text-muted font-weight-medium">View Post</p>
-                                    <h4 class="mb-0">723</h4>
+                                    <h4 class="mb-0">0</h4>
                                 </div>
 
                                 <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
                                                         <span class="avatar-title rounded-circle bg-primary">
-                                                            <i class="bx bx-archive-in font-size-24"></i>
+                                                            <i class="bx bx-hide eye-icon font-size-24"></i>
                                                         </span>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                             <div class="media">
                                 <div class="media-body">
                                     <p class="text-muted font-weight-medium">Like Post</p>
-                                    <h4 class="mb-0">12</h4>
+                                    <h4 class="mb-0">0</h4>
                                 </div>
 
                                 <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">

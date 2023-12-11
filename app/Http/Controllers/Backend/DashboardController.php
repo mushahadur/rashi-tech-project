@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
    public function index(){
-    return view('admin.pages.home.index');
+      $userId = Auth::user()->id;
+      $totalPost = Post::where('user_id', $userId)->count();
+      
+    return view('admin.pages.home.index', compact('totalPost'));
    }
 }

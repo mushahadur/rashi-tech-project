@@ -4,6 +4,7 @@
 <section>
     <div class="container">
         <div class="row">
+            
             <div class="col-md-6">
                 <div class="pt-5">
                     <img src="{{asset('/storage/User-image/'.Auth::user()->image)}}" alt="{{Auth::user()->name}}" style="width:60%; background-color: white;
@@ -14,6 +15,7 @@
                 </div>
             </div>
             <div class="col-md-6 py-5">
+                <h4 class="text-center text-success" style="margin-bottom: 12px;">{{Session::get('message')}}</h4>
                 <div class="bg-dark py-3"><h2 class="text-center text-white">All Informetion</h2></div>
                 <div class="py-4"></div>
                 <h3 class="pl-3">Name:  {{Auth::user()->name}}</h3><hr>

@@ -65,7 +65,7 @@
                     <div class="form-group row mb-4">
                         <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Update Email</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" value="{{Auth::user()->email}}" id="horizontal-firstname-input" name="email"/>
+                            <input type="text" class="form-control" value="{{Auth::user()->email}}" id="horizontal-firstname-input" readonly />
                         </div>
                     </div>
                     <div class="form-group row mb-4">
