@@ -89,5 +89,10 @@ It is php 8.1.2 version
 6. Data Handling:  
     - The system must have the ability to handle large volumes of data.
 
+<br>
+
+7. Error Handling:  
+    - The system must have the ability to handle error like Page not found and internal server error.
+
 
 
